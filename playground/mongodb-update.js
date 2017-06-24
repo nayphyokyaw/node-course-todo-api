@@ -11,26 +11,26 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
 	}
 	console.log('Connected to MongoDB server');
 
-	// db.collection('Todos').findOneAndUpdate({
-	// 	_id: new ObjectID('594bdb81a43f4d4e87960c72')
-	// }, {
-	// 	$set: {
-	// 		 completed: true
-	// 	}
-	// }, {
-	// 	returnOriginal: false
-	// }).then((result) => {
-	// 	console.log(result);
-	// });
+	db.collection('Todos').findOneAndUpdate({
+		_id: new ObjectID('594ce18dca898b24844fac3c')
+	}, {
+		$set: {
+			 completed: true
+		}
+	}, {
+		returnOriginal: false
+	}).then((result) => {
+		console.log(result);
+	});
 
 	db.collection('Users').findOneAndUpdate({
-		_id: new ObjectID('594a87aedb164d1b44736b5e')
+		_id: new ObjectID('594ce2c7ab97ae1464a264da')
 	}, {
 		$set: {
 			 name: 'Kyawsithu'
 		},
 		$inc: {
-			age: 1
+			age: 5
 		}
 	}, {
 		returnOriginal: false
